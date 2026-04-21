@@ -1,0 +1,17 @@
+{
+  "name": "Omer Turner | Cosplay Photography",
+  "short_name": "OT Photo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030303",
+  "theme_color": "#030303",
+  "description": "High-grade cinematic cosplay photography portfolio by Omer Turner.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
