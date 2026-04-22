@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omer Turner | Professional Concert & Live Music Photography</title>
+    <meta name="description"
+        content="Capturing the raw energy, atmosphere, and essence of live music performances. Professional concert photography by Omer Turner.">
+    <link rel="canonical" href="https://omerturner.com/concerts">
+    <meta name="theme-color" content="#030303">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omerturner.com/concerts">
+    <meta property="og:title" content="Omer Turner | Professional Concert Photographer">
+    <meta property="og:description"
+        content="Capturing the raw energy, atmosphere, and essence of live music. Relive the exhilaration of unforgettable performances.">
+    <meta property="og:image" content="https://omerturner.com/assets/concerts/hero.webp">
+    <meta property="og:site_name" content="Omer Turner Photography">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://omerturner.com/concerts">
+    <meta property="twitter:title" content="Omer Turner | Professional Concert Photographer">
+    <meta property="twitter:description" content="Capturing the raw energy and essence of live music performances.">
+    <meta property="twitter:image" content="https://omerturner.com/assets/concerts/hero.webp">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["ProfessionalService", "Person"],
+      "name": "Omer Turner Concert Photography",
+      "url": "https://omerturner.com/concerts",
+      "image": "https://omerturner.com/assets/concerts/hero.webp",
+      "jobTitle": "Professional Concert Photographer",
+      "description": "Professional concert and live music photography by Omer Turner capturing the energy of the stage.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Global",
+        "addressCountry": "IL"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/src/concerts/style.css">
+</head>
+
+<body aria-label="Professional Concert Photography Portfolio by Omer Turner">
+
+    <a href="#portfolio" class="skip-link">Skip to Portfolio</a>
+
+    <header class="navbar">
+        <div class="container">
+            <nav aria-label="Main Navigation">
+                <a href="#portfolio">Portfolio</a>
+                <a href="#about">About Omer</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="hero" aria-label="Hero Section">
+            <div class="hero-bg" role="presentation">
+                <img src="/assets/concerts/hero.webp" alt="" role="presentation">
+                <div class="overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-brand">
+                    <img src="/assets/concerts/watermark.png" alt="Omer Turner Logo" class="hero-watermark">
+                    <h1 class="visually-hidden">OMER TURNER - Professional Concert & Live Music Photography</h1>
+                </div>
+                <p class="subtitle" aria-label="Portfolio Subtitle">CAPTURING THE ENERGY OF LIVE MUSIC</p>
+            </div>
+            <a href="#portfolio" class="scroll-ind" aria-label="Scroll to Portfolio">
+                <span>EXPLORE</span>
+                <div class="line"></div>
+            </a>
+        </section>
+
+        <section id="portfolio" aria-labelledby="portfolio-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="reveal-text" id="portfolio-title">PORTFOLIO<span>.</span></h2>
+                </div>
+                <div class="portfolio-grid" id="portfolio-grid" role="region" aria-label="Photography Gallery">
+                    <!-- Gallery items will be injected by main.js -->
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container reveal" aria-labelledby="about-title">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 id="about-title">THE EYE BEHIND THE LENS<span>.</span></h2>
+                    <p>A passionate photographer dedicated to capturing the energy and essence of live music. Showcased
+                        here are moments that bring forward the concert experience to life - allowing others to relive
+                        the exhilaration and atmosphere of these unforgettable performances.</p>
+                </div>
+                <div class="about-image">
+                    <img src="/assets/concerts/about.jpg" alt="Omer Turner Portrait" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact" class="container reveal" aria-labelledby="contact-title">
+            <div class="contact-box">
+                <h2 id="contact-title">LET'S CAPTURE THE MOMENT<span>.</span></h2>
+                <p>Available for concerts, festivals, and tours.</p>
+                <div class="contact-links">
+                    <a href="mailto:hello@omerturner.com" class="btn btn-primary"
+                        aria-label="Schedule a call via email">SCHEDULE A CALL</a>
+                    <nav class="socials" aria-label="Social Media Links">
+                        <a href="https://instagram.com/omerams.live" target="_blank"
+                            aria-label="Visit Instagram profile of Omer Turner">INSTAGRAM</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 OMER TURNER. ALL RIGHTS RESERVED.</p>
+            <p>CONCERT & LIVE MUSIC PHOTOGRAPHY</p>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div class="exif-info"></div>
+            <button class="close-lightbox">&times;</button>
+        </div>
+    </div>
+
+    <script type="module" src="/src/concerts/main.js"></script>
+</body>
+
+</html>

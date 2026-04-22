@@ -1,6 +1,6 @@
 import './style.css'
 
-const totalImages = 32;
+const totalImages = 18;
 
 // Cinematic Gallery Generation with Balanced Columns
 const generateGallery = () => {
@@ -18,14 +18,14 @@ const generateGallery = () => {
     for (let i = 1; i <= totalImages; i++) {
         const item = document.createElement('div');
         item.className = 'grid-item reveal';
-        item.setAttribute('data-full', `/assets/cosplay/full/${i}.jpg`);
+        item.setAttribute('data-full', `/assets/concerts/full/${i}.jpg`);
         item.setAttribute('data-index', i - 1);
         item.setAttribute('tabindex', '0');
         item.setAttribute('role', 'button');
-        item.setAttribute('aria-label', `View cinematic cosplay photo ${i} by Omer Turner`);
+        item.setAttribute('aria-label', `View concert photography photo ${i} by Omer Turner`);
         
         item.innerHTML = `
-            <img src="/assets/cosplay/thumb/${i}.jpg" alt="Cinematic Cosplay Photography by Omer Turner - Gallery Item ${i}" loading="lazy" aria-label="View full resolution version of cosplay artwork ${i}">
+            <img src="/assets/concerts/thumb/${i}.jpg" alt="Concert Photography by Omer Turner - Gallery Item ${i}" loading="lazy" aria-label="View full resolution version of concert photography ${i}">
             <div class="item-overlay">
                 <span class="view-btn">VIEW</span>
             </div>
@@ -35,8 +35,6 @@ const generateGallery = () => {
         setupTilt(item);
 
         // Distribute to the shortest column
-        // We use a small trick: since images might not be loaded, 
-        // we check scrollHeight which is more reliable for immediate appends
         let shortest = columns[0];
         for (let j = 1; j < columns.length; j++) {
             if (columns[j].scrollHeight < shortest.scrollHeight) {
@@ -248,8 +246,8 @@ const randomizeTagline = () => {
     if (!subtitle) return;
     
     const taglines = [
-        "CINEMATIC VISUAL STORYTELLING",
-        "WHERE FICTION MEETS REALITY"
+        "CAPTURING THE ENERGY OF LIVE MUSIC",
+        "MOMENTS FROM THE FRONT ROW"
     ];
     
     const randomIndex = Math.floor(Math.random() * taglines.length);

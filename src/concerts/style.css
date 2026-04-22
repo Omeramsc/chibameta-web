@@ -262,7 +262,7 @@ nav a:hover {
 .portfolio-grid {
     display: flex;
     gap: 30px;
-    padding: 60px 0 0 0; /* Minimal bottom gap to reduce distance to About section */
+    padding: 60px 0 150px 0; /* Substantial bottom buffer to prevent parallax overlap with About section */
     align-items: flex-start;
 }
 
@@ -272,7 +272,6 @@ nav a:hover {
     flex-direction: column;
     gap: 30px;
     transition: transform 0.1s linear; /* Smooth parallax */
-    will-change: transform;
 }
 
 .grid-item {
@@ -291,7 +290,7 @@ nav a:hover {
     height: auto;
     display: block;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-    /* Removed grayscale and brightness filters to restore original photo colors */
+    /* Removed filters to restore original photo colors */
 }
 
 .grid-item:hover img {
@@ -336,7 +335,7 @@ nav a:hover {
 
 /* About Section */
 #about {
-    padding: 0 40px 120px 40px; /* Removed top gap to pull section closer to the gallery */
+    padding: 60px 40px 120px 40px; /* Aligned with larger grid buffer for better rhythm */
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -469,15 +468,9 @@ nav a:hover {
     color: var(--accent);
 }
 
-/* Footer */
-footer {
-    padding: 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
 /* Recognition Section */
 #recognition {
-    padding: 40px 40px 120px 40px; /* Matched to the new About section rhythm */
+    padding: 40px 40px 120px 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background: linear-gradient(to bottom, var(--bg), var(--surface));
 }
@@ -504,11 +497,6 @@ footer {
     transition: var(--transition);
 }
 
-.award-item.primary {
-    border-left-color: var(--accent);
-    background: rgba(224, 186, 117, 0.05);
-}
-
 .award-item:hover {
     background: rgba(255, 255, 255, 0.05);
 }
@@ -531,126 +519,11 @@ footer {
     color: var(--text-muted);
 }
 
-/* Marquee Styles */
-.recognition-marquee-container {
-    overflow: hidden;
-    position: relative;
-    padding: 20px 0;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+/* Footer */
+footer {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
-
-.marquee-track {
-    display: flex;
-    gap: 40px;
-    width: max-content;
-    animation: marquee 40s linear infinite;
-}
-
-.marquee-track:hover {
-    animation-play-state: paused;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.marquee-item {
-    flex: 0 0 auto;
-    height: 400px;
-    width: auto;
-    min-width: 300px;
-    position: relative;
-    background: var(--surface-light);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    overflow: hidden;
-}
-
-.marquee-item img {
-    height: 100%;
-    width: auto;
-    display: block;
-    object-fit: contain;
-    transition: var(--transition);
-}
-
-.marquee-item:hover img {
-    transform: scale(1.05);
-}
-
-.poster-overlay {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    padding: 10px;
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: var(--transition);
-}
-
-.marquee-item:hover .poster-overlay {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.poster-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    text-align: center;
-    background: radial-gradient(circle at center, #111, #080808);
-}
-
-.poster-placeholder span {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.5rem;
-    color: var(--accent);
-    margin-bottom: 10px;
-}
-
-.poster-placeholder.pixelmania {
-    background: linear-gradient(45deg, #050505, #151515);
-    border: 1px solid var(--accent);
-}
-
-.poster-placeholder.embassy {
-    background: linear-gradient(-45deg, #080808, #111);
-}
-
-.press-content {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-@media (max-width: 1024px) {
-    .recognition-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .marquee-item {
-        flex: 0 0 250px;
-        height: 350px;
-    }
-}
-
 
 .footer-content {
     display: flex;
@@ -734,6 +607,9 @@ footer {
     }
     .portfolio-column:nth-child(3) {
         display: none;
+    }
+    .recognition-grid {
+        grid-template-columns: 1fr;
     }
 }
 
