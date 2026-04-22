@@ -101,6 +101,12 @@ h1, h2, h3 {
     transition: var(--transition);
 }
 
+.navbar--hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
 .navbar .container {
     display: flex;
     justify-content: center; /* Center the nav links */

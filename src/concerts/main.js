@@ -193,15 +193,22 @@ const heroParallax = () => {
 // Navbar Background & Signature Reveal on Scroll
 const navbarScroll = () => {
     const navbar = document.querySelector('.navbar');
-    const logo = document.querySelector('.logo');
-    if (!navbar || !logo) return;
+    const portfolio = document.getElementById('portfolio');
+    if (!navbar || !portfolio) return;
 
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
-        const heroHeight = document.getElementById('hero').offsetHeight;
+        const portfolioTop = portfolio.offsetTop;
 
-        // Reveal navbar background hint
-        if (scrolled > 50) {
+        // Hide navbar if we've scrolled to the portfolio section
+        if (scrolled >= portfolioTop - 100) {
+            navbar.classList.add('navbar--hidden');
+        } else {
+            navbar.classList.remove('navbar--hidden');
+        }
+
+        // Handle visual states when visible
+        if (scrolled > 50 && scrolled < portfolioTop - 100) {
             navbar.style.background = 'rgba(3, 3, 3, 0.2)'; // Very subtle hint of a bar
             navbar.style.backdropFilter = 'blur(10px)';
             navbar.style.height = '80px';
