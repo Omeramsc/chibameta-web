@@ -49,14 +49,17 @@ const generateGallery = () => {
 
 // Magnetic Tilt Effect
 const setupTilt = (el) => {
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!canHover) return;
+
     el.addEventListener('mousemove', (e) => {
         const { left, top, width, height } = el.getBoundingClientRect();
         const x = (e.clientX - left) / width - 0.5;
         const y = (e.clientY - top) / height - 0.5;
-        
+
         const img = el.querySelector('img');
-        const multiplier = 30; // Tilt intensity
-        
+        const multiplier = 30;
+
         img.style.transform = `scale(1.1) rotateX(${-y * multiplier}deg) rotateY(${x * multiplier}deg)`;
     });
 
