@@ -718,3 +718,49 @@ footer {
         right: 16px;
     }
 }
+
+@media (max-width: 480px) {
+    .container,
+    #portfolio .container,
+    #about,
+    #recognition,
+    #contact {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        max-width: 100%;
+    }
+    header nav a {
+        margin: 0;
+        padding: 16px 0;
+        letter-spacing: 0.14em;
+        white-space: nowrap;
+    }
+
+    .handle {
+        letter-spacing: 0.2em;
+        font-size: 0.9rem;
+    }
+    .subtitle {
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        max-width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 0.65rem;
+    }
+}
