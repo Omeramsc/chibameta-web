@@ -107,6 +107,12 @@ h1, h2, h3 {
     pointer-events: none;
 }
 
+.navbar--scrolled {
+    background: rgba(3, 3, 3, 0.2);
+    backdrop-filter: blur(10px);
+    height: 80px;
+}
+
 .navbar .container {
     display: flex;
     justify-content: center; /* Center the nav links */
