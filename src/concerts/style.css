@@ -680,6 +680,7 @@ footer {
         min-width: 0;
     }
     .about-image {
+        width: 100%;
         max-width: 520px;
         justify-self: start;
     }
