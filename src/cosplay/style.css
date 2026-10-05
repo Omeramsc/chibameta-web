@@ -107,6 +107,12 @@ h1, h2, h3 {
     pointer-events: none;
 }
 
+.navbar--scrolled {
+    background: rgba(3, 3, 3, 0.2);
+    backdrop-filter: blur(10px);
+    height: 80px;
+}
+
 .navbar .container {
     display: flex;
     justify-content: center; /* Center the nav links */
@@ -746,9 +752,11 @@ footer {
 @media (max-width: 768px) {
     .portfolio-grid {
         flex-direction: column;
+        min-width: 0;
     }
     .portfolio-column {
         width: 100%;
+        min-width: 0;
         transform: none !important;
     }
     .portfolio-column:nth-child(3) {
@@ -756,5 +764,124 @@ footer {
     }
     .navbar .container {
         padding: 0 20px;
+    }
+    .navbar {
+        padding-top: env(safe-area-inset-top);
+        height: calc(100px + env(safe-area-inset-top));
+    }
+    .navbar--scrolled {
+        height: calc(80px + env(safe-area-inset-top));
+    }
+
+    #hero {
+        height: 100svh;
+        height: 100dvh;
+    }
+    .hero-content {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .scroll-ind {
+        bottom: calc(28px + env(safe-area-inset-bottom));
+    }
+
+    .section-header h2 {
+        font-size: min(3rem, 8.2vw);
+        max-width: 100%;
+    }
+    #about h2,
+    #contact h2 {
+        font-size: min(2.5rem, 7.5vw);
+        max-width: 100%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .about-grid > * {
+        min-width: 0;
+    }
+    .about-image {
+        width: 100%;
+        max-width: 520px;
+        justify-self: start;
+    }
+
+    .recognition-grid > * {
+        min-width: 0;
+    }
+    .recognition-marquee-container {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .contact-box {
+        padding: 48px 28px;
+    }
+    .socials {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 16px 28px;
+        letter-spacing: 2px;
+    }
+
+    .lightbox-content {
+        max-width: calc(100% - 32px);
+        max-height: calc(100% - 32px);
+    }
+    .lightbox-content img {
+        max-height: 70vh;
+    }
+    .close-lightbox {
+        position: fixed;
+        top: calc(12px + env(safe-area-inset-top));
+        right: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container,
+    #portfolio .container,
+    #about,
+    #recognition,
+    #contact {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        max-width: 100%;
+    }
+    header nav a {
+        margin: 0;
+        padding: 16px 0;
+        letter-spacing: 0.14em;
+        white-space: nowrap;
+    }
+
+    .handle {
+        letter-spacing: 0.2em;
+        font-size: 0.9rem;
+    }
+    .subtitle {
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        max-width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
     }
 }

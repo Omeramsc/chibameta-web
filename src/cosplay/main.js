@@ -49,14 +49,17 @@ const generateGallery = () => {
 
 // Magnetic Tilt Effect
 const setupTilt = (el) => {
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!canHover) return;
+
     el.addEventListener('mousemove', (e) => {
         const { left, top, width, height } = el.getBoundingClientRect();
         const x = (e.clientX - left) / width - 0.5;
         const y = (e.clientY - top) / height - 0.5;
-        
+
         const img = el.querySelector('img');
-        const multiplier = 30; // Tilt intensity
-        
+        const multiplier = 30;
+
         img.style.transform = `scale(1.1) rotateX(${-y * multiplier}deg) rotateY(${x * multiplier}deg)`;
     });
 
@@ -202,22 +205,16 @@ const navbarScroll = () => {
         const scrolled = window.scrollY;
         const portfolioTop = portfolio.offsetTop;
 
-        // Hide navbar if we've scrolled to the portfolio section
         if (scrolled >= portfolioTop - 100) {
             navbar.classList.add('navbar--hidden');
         } else {
             navbar.classList.remove('navbar--hidden');
         }
 
-        // Handle visual states when visible
         if (scrolled > 50 && scrolled < portfolioTop - 100) {
-            navbar.style.background = 'rgba(3, 3, 3, 0.2)'; // Very subtle hint of a bar
-            navbar.style.backdropFilter = 'blur(10px)';
-            navbar.style.height = '80px';
+            navbar.classList.add('navbar--scrolled');
         } else {
-            navbar.style.background = 'transparent';
-            navbar.style.backdropFilter = 'none';
-            navbar.style.height = '100px';
+            navbar.classList.remove('navbar--scrolled');
         }
     });
 };
